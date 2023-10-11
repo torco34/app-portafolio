@@ -3,12 +3,14 @@ import React from 'react';
 import { Button, Form, Input, Col, Row } from 'antd';
 
 import { useForm, Controller, useFieldArray } from 'react-hook-form';
+import FormItem from 'antd/es/form/FormItem';
 
 type FieldType = {
   name?: string;
   lasNamer?: string;
   email?: string;
   Dirección?: string;
+  dataPersona?: string;
 };
 
 
@@ -20,7 +22,8 @@ export const RegistroDeConferencia = () => {
     defaultValues: {
       name: '',
       lasNamer: '',
-      Dirección: ''
+      Dirección: '',
+      dataPersona: ''
 
     },
   });
@@ -82,6 +85,18 @@ export const RegistroDeConferencia = () => {
 
           </Form.Item>
 
+
+          <Controller
+            name="dataPersona"
+            control={control}
+            render={({ field }) => (
+              < Form.Item>
+
+                <Input.Password {...field} />
+              </Form.Item>
+            )}
+
+          />
           <Form.Item<FieldType>
             label="Email"
             rules={[{ required: true, message: 'Please input your password!' }]}

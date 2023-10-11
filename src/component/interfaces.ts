@@ -22,4 +22,5 @@ export type FieldType = {
   otraHabita?: string;
   otraComida?: string;
   otroCargo?: string;
+  
 };

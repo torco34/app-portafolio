@@ -13,7 +13,7 @@ export const Header = () => {
             <Link to="/registro" className="text-decoration-none custom-link">Registro</Link>
           </li>
           <li className='list-inline-item'>
-            <Link to="/registro2" className="text-decoration-none custom-link">and sai</Link>
+            <Link to="/registro2" className="text-decoration-none custom-link">And</Link>
           </li>
         
         </ul>
