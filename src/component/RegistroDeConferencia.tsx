@@ -1,127 +1,92 @@
 
-import React from 'react';
-import { Button, Form, Input, Col, Row } from 'antd';
+import { useForm, useFieldArray, Controller,  useWatch } from "react-hook-form"
 
-import { useForm, Controller, useFieldArray } from 'react-hook-form';
-import FormItem from 'antd/es/form/FormItem';
-
-type FieldType = {
-  name?: string;
-  lasNamer?: string;
-  email?: string;
-  Dirección?: string;
-  dataPersona?: string;
+type FormData = {
+  categoria: string[];
+  articulo: string[];
+  name: string
+  nuevaCategoria?: string
 };
 
 
-export const RegistroDeConferencia = () => {
-  // section de antd
+export const RegistroDeConferencia = ({ }: FormData) => {
+  const { control, handleSubmit, formState: { errors }, watch, register } = useForm<FormData, any>();
 
-  // section the react hook from
-  const { control, handleSubmit, formState: { errors } } = useForm<FieldType>({
-    defaultValues: {
-      name: '',
-      lasNamer: '',
-      Dirección: '',
-      dataPersona: ''
-
-    },
+  const {fields, append} = useFieldArray<FormData>({
+    control,
+    name: "articulo",
   });
-
-
-
-  const onSubmit = (data: FieldType) => {
-    console.log('Data submitted:', data);
-
+  const categorias = ["Frutas", "Verduras", "Bebidas"];
+  const articulosPorCategoria: Record<string, string[]> = {
+    Habitacion: ["Cama doble", "con vista", "Aire"],
+    Verduras: ["Lechuga", "Tomate", "Zanahoria"],
+    Bebidas: ["Agua", "Refresco", "Jugo"],
   };
+  console.log(articulosPorCategoria)
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
 
+  })
 
   return (
-    <>
-      <br></br>
-      <div className="container-for">
+    <div className="container">
+      <form onSubmit={onSubmit}>
+        <label>Empresa</label>
+        <Controller name="categoria"
+          control={control}
+          render={({ field }) => (
+            <select {...field}>
+              {categorias.map((categoria: any) => (
+                <option key={categoria} value={categoria}>
+                  {categoria}
+                </option>
+              ))}
+            </select>
+          )} />
+        <br></br>
+        <label>Artículo</label>
+        <Controller
+          name="articulo"
+          control={control}
+          render={({ field }) => (
+            <select {...field}>
+              {Object.keys(articulosPorCategoria).map((categoria) => (
+                <>
+                  <option key={categoria} value={categoria}>
+                    <p>{categoria}</p>
+                    <ul>
+                      {articulosPorCategoria[categoria].map((articulo) => (
+                        // <li key={articulo}>{articulo}</li>
+                        <p>{articulo}</p>
 
-        <Form
-          name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          style={{ maxWidth: 600 }}
-          initialValues={{ remember: true }}
-          onFinish={handleSubmit(onSubmit)}
-          autoComplete="off"
-        >
-          <Form.Item<FieldType>
-            label="Name"
-            rules={[{ required: true, message: 'Please input your username!' }]}
-          >
-            <Controller
-              name="name"
-              control={control}
-              render={({ field }) => <Input {...field} />}
-            />
+                      ))}
+                    </ul>
 
-          </Form.Item>
-          <Form.Item<FieldType>
-            label="last name"
-            rules={[{ required: true, message: 'Please input your email' }
-            ]}
-          >
-            <Controller
-              name="lasNamer"
-              control={control}
-              render={({ field }) => <Input {...field} />}
-            />
-          </Form.Item>
-          <Form.Item<FieldType>
-            label="Email"
-            rules={[{ required: true, message: 'Please input your password!' }]}
+                  </option>
 
-          >
-            <Controller
-              name="email"
-              control={control}
-              render={({ field }) => <Input.Password {...field} />}
-            />
-
-          </Form.Item>
+                </>
+              )
+              )}
+            </select>
+          )}
+        />
+      
+      </form>
+      hola
+    </div>
 
 
-          <Controller
-            name="dataPersona"
-            control={control}
-            render={({ field }) => (
-              < Form.Item>
-
-                <Input.Password {...field} />
-              </Form.Item>
-            )}
-
-          />
-          <Form.Item<FieldType>
-            label="Email"
-            rules={[{ required: true, message: 'Please input your password!' }]}
-
-          >
-            <Controller
-              name="email"
-              control={control}
-              render={({ field }) => <Input.Password {...field} />}
-            />
-
-          </Form.Item>
-
-
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </div>
-    </>
   )
 }
 
-  ;
+
+
+
+
+
+
+
+
+
 
 

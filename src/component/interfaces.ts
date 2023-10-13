@@ -22,5 +22,10 @@ export type FieldType = {
   otraHabita?: string;
   otraComida?: string;
   otroCargo?: string;
+  categoria?: string;
+  articulo?: string
+  Frutas: string[];
+  Verduras: string[]
+  Bebidas: string[]
   
 };
