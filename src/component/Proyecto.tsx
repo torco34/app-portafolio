@@ -10,7 +10,7 @@ interface FormValues {
     }[];
 }
 export const Proyecto = ({ }: FormValues) => {
-    const [showAdditionalField, setShowAdditionalField] = useState(false);
+    // const [showAdditionalField, setShowAdditionalField] = useState(false);
 
     const { control, handleSubmit, watch } = useForm();
 
@@ -28,14 +28,14 @@ export const Proyecto = ({ }: FormValues) => {
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label>Selecciona una conferencia:</label>
+                    <label >Selecciona una conferencia:</label>
                     <Controller
                         control={control}
                         name="selectedConferencia"
                         render={({ field }) => (
-                            <select {...field}>
-                                <option value="">Selecciona una conferencia</option>
-                                <option value="conferencia1">Conferencia 1</option>
+                            <select {...field}  >
+                                <option value=""  >Selecciona una conferencia</option>
+                                <option value="conferencia1" >Conferencia 1</option>
                                 <option value="conferencia2">Conferencia 2</option>
                                 {/* Agrega más opciones de conferencia según sea necesario */}
                             </select>
@@ -44,9 +44,11 @@ export const Proyecto = ({ }: FormValues) => {
                 </div>
                 {selectedConferencia && (
                     <div>
-                        <h3>Detalles de la conferencia {selectedConferencia}</h3>
+                        <h3 className='' onClick={() => append({})}>Detalles de la conferencia {selectedConferencia}</h3>
+
+
                         {fields.map((item, index) => (
-                            <div key={item.id}>
+                            <div key={item.id} >
                                 <Controller
                                     control={control}
                                     name={`conferencias[${index}].nombre`}

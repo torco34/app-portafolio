@@ -1,20 +1,24 @@
 
-import { useForm, useFieldArray, Controller,  useWatch } from "react-hook-form"
+import { useForm, useFieldArray, Controller, useWatch } from "react-hook-form"
 
 type FormData = {
-  categoria: string[];
-  articulo: string[];
-  name: string
-  nuevaCategoria?: string
+  items: {
+    name: string;
+    type: string;
+    categoria: string[];
+    articulo: string[];
+    nuevaCategoria?: string
+  }[];
+
 };
 
 
 export const RegistroDeConferencia = ({ }: FormData) => {
   const { control, handleSubmit, formState: { errors }, watch, register } = useForm<FormData, any>();
 
-  const {fields, append} = useFieldArray<FormData>({
+  const { } = useFieldArray<FormData>({
     control,
-    name: "articulo",
+    name: "items",
   });
   const categorias = ["Frutas", "Verduras", "Bebidas"];
   const articulosPorCategoria: Record<string, string[]> = {
@@ -23,7 +27,7 @@ export const RegistroDeConferencia = ({ }: FormData) => {
     Bebidas: ["Agua", "Refresco", "Jugo"],
   };
   console.log(articulosPorCategoria)
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit((data: any) => {
     console.log(data)
 
   })
@@ -31,8 +35,9 @@ export const RegistroDeConferencia = ({ }: FormData) => {
   return (
     <div className="container">
       <form onSubmit={onSubmit}>
-        <label>Empresa</label>
-        <Controller name="categoria"
+        <label>Empresa </label>
+        <Controller 
+        name="items"
           control={control}
           render={({ field }) => (
             <select {...field}>
@@ -46,12 +51,13 @@ export const RegistroDeConferencia = ({ }: FormData) => {
         <br></br>
         <label>Artículo</label>
         <Controller
-          name="articulo"
+          name="items"
           control={control}
           render={({ field }) => (
             <select {...field}>
               {Object.keys(articulosPorCategoria).map((categoria) => (
                 <>
+                
                   <option key={categoria} value={categoria}>
                     <p>{categoria}</p>
                     <ul>
@@ -70,9 +76,9 @@ export const RegistroDeConferencia = ({ }: FormData) => {
             </select>
           )}
         />
-      
+
       </form>
-      hola
+      
     </div>
 
 

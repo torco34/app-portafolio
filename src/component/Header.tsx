@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
+
 export const Header = () => {
 
 
@@ -17,6 +18,12 @@ export const Header = () => {
           </li>
           <li className='list-inline-item'>
             <Link to="/curso" className="text-decoration-none custom-link">curso</Link>
+          </li>
+          <li className='list-inline-item'>
+            <Link to="/proyecto" className="text-decoration-none custom-link">Proyecto</Link>
+          </li>
+          <li className='list-inline-item'>
+            <Link to="/borrado" className="text-decoration-none custom-link">Borrador</Link>
           </li>
           <li className='list-inline-item'>
             <Link to="/proyecto" className="text-decoration-none custom-link">Proyecto</Link>

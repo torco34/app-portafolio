@@ -23,9 +23,8 @@ export type FieldType = {
   otraComida?: string;
   otroCargo?: string;
   categoria?: string;
-  articulo?: string
+  articulo?: string;
   Frutas: string[];
-  Verduras: string[]
-  Bebidas: string[]
-  
+  Verduras: string[];
+  Bebidas: string[];
 };
