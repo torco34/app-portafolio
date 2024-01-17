@@ -1,8 +1,14 @@
 // import DynamicForm from "./component/DynamicForm"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Header, RegistroDeConferencia, Registro, Curso, Borrador } from "./component";
-import { Proyecto } from "./component/Proyecto";
-import {ProyectoFields} from "./component/proyectoPresentar/ProyectoFields";
+
+
+import { Layout } from "./component/header/Layout";
+import { HomePages } from "./pages/HomePages";
+import { Project } from "./pages/Project";
+import { StudyPages } from "./pages/StudyPages";
+import { AboutPages } from "./pages/AboutPages";
+// import { Curso } from "./component/Curso";
+
 
 
 function App() {
@@ -11,15 +17,16 @@ function App() {
     <div >
 
       <Router>
-        <Header />
+
         <Routes>
-          <Route path="/registro" element={<Registro />} />
-          <Route path="/proyecto" element={<ProyectoFields />} />
-          <Route path="/registro2" element={<RegistroDeConferencia />} />
-          <Route path="/curso" element={<Curso />} />
-          <Route path="/proyecto" element={<Proyecto />} />
-          <Route path="/borrado" element={<Borrador />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePages />} />
+            <Route path="proyecto" element={<Project />} />
+            <Route path="study" element={<StudyPages />} />
+            <Route path="about" element={<AboutPages />} />
+          </Route>
         </Routes>
+
       </Router>
 
 
