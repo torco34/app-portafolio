@@ -1,10 +1,11 @@
-import { CarouselItem } from "../component/CarouselItem"
+
+import { HomeImgFond } from "../component/homeComponent/HomeImgFond"
 
 
 export const HomePages = () => {
   return (
-    <div className="bg-dark text-light">
-    <h1>BIENVENIDO A MI PORTAFOLIO</h1>
+    <div className="">
+      <HomeImgFond />
     </div>
   )
 }
