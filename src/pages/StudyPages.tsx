@@ -1,7 +1,13 @@
+import { ClipPath } from "../component/study/ClipPath";
+import { ContainerPageStudy } from "../assets/styled/study/StudyPages";
 
 
 export const StudyPages = () => {
   return (
-    <div>StudyPages</div>
-  )
-}
+    <>
+      <ContainerPageStudy>
+        <ClipPath />
+      </ContainerPageStudy>
+    </>
+  );
+};
