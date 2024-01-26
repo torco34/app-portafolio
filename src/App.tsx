@@ -1,37 +1,31 @@
 // import DynamicForm from "./component/DynamicForm"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-
 import { Layout } from "./component/header/Layout";
 import { HomePages } from "./pages/HomePages";
 import { Project } from "./pages/Project";
 import { StudyPages } from "./pages/StudyPages";
 import { AboutPages } from "./pages/AboutPages";
-// import { Curso } from "./component/Curso";
-
-
+import { ContactPages } from "./pages/ContactPages";
+import { ContextProvider } from "./usecontext/ ContextProvider";
+import { Resultado } from "./component/Resultado";
 
 function App() {
-
   return (
-    <div >
-
-      <Router>
-
+    <Router>
+      <ContextProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePages />} />
             <Route path="proyecto" element={<Project />} />
             <Route path="study" element={<StudyPages />} />
             <Route path="about" element={<AboutPages />} />
+            <Route path="contact" element={<ContactPages />} />
+            <Route path="*" element={<Resultado />} />
           </Route>
         </Routes>
-
-      </Router>
-
-
-    </div>
-  )
+      </ContextProvider>
+    </Router>
+  );
 }
 
-export default App
+export default App;

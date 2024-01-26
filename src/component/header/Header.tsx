@@ -1,8 +1,19 @@
-import { Link, Outlet } from "react-router-dom";
-import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavStyled, PortfolioText } from "./styled/Header";
+import { Search } from "./Search";
+import { useThemeContext } from '../../usecontext/ ContextProvider';
 
 export const Header = () => {
+
+    const { query, setQuery } = useThemeContext() ?? { query: '' };
+    const history = useNavigate();
+    const handleSearch = (searchQuery: string) => {
+        console.log(searchQuery, "ek,d")
+        setQuery(searchQuery);
+        history(`${searchQuery}`);
+
+    };
     return (
         <>
             <Navbar expand="lg" className="show bg-dark ">
@@ -18,19 +29,11 @@ export const Header = () => {
                                 <Link to="study">Study</Link>
                                 <Link to="proyecto">Projects</Link>
                                 <Link to="about">About</Link>
-                                <Link to="about">Contact</Link>
+                                <Link to="contact">Contact</Link>
                             </NavStyled>
                         </Nav>
 
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-dark" className="bg-light">Search</Button>
-                        </Form>
+                        <Search onSearch={handleSearch} query={query}/>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
