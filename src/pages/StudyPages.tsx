@@ -1,13 +1,13 @@
 import { ClipPath } from "../component/study/ClipPath";
-import { ContainerPageStudy } from "../assets/styled/study/StudyPages";
 
+import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg";
 
 export const StudyPages = () => {
   return (
     <>
-      <ContainerPageStudy>
+      <ContainerImgFondo>
         <ClipPath />
-      </ContainerPageStudy>
+      </ContainerImgFondo>
     </>
   );
 };

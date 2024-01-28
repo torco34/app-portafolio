@@ -1,5 +1,8 @@
 import styled from "styled-components";
-
+export const theme = {
+  dark: "#000",
+  purple: "#492E87"
+};
 export const ContainerImgFondo = styled.div`
   position: relative;
   color: #333;
@@ -18,6 +21,6 @@ export const ContainerImgFondo = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 `;

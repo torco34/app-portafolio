@@ -2,33 +2,23 @@ import {
   ClipPathRight,
   ContenedorDiv,
   ClipPathLeft,
-  TextContainer,
+  TextBienvenida,
 } from "../../assets/styled/study/ClipPath";
+import { Texto } from "../common/Texto";
 
 
 export const ClipPath = () => {
   return (
-    <div className="container">
+
+
+    <div className="mx-auto max-w-6xl">
       <ContenedorDiv>
-        <ClipPathRight>TAA</ClipPathRight>
-        <TextContainer>
-          bienvido a mis proyectos
-          disudnmdk  nsnjdn nsnjnsjd ksm
-          <br></br> geuydj ejfnj kmedke
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nihil
-          <br></br> corporis earum odit hic veritatis ea vel, perferendis expedita animi
-          <br></br>voluptatum rerum fuga modi impedit labore cum quasi harum doloribus!
-
-        </TextContainer>
-        <TextContainer>
-          bienvido a mis proyectos
-          disudnmdk  nsnjdn nsnjnsjd ksm
-          <br></br> geuydj ejfnj kmedke
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nihil
-          <br></br> corporis earum odit hic veritatis ea vel, perferendis expedita animi
-          <br></br>voluptatum rerum fuga modi impedit labore cum quasi harum doloribus!
-
-        </TextContainer>
+        <ClipPathRight></ClipPathRight>
+        <TextBienvenida >BIENVENIDOS .</TextBienvenida>
+        <Texto
+          titles="A conocer mis Habilidades"
+          title="Html5, css3, Bootstrap, Javascript, Typescript y React "
+          text="Git, GitHub, Linux, VS Code" />
         <ClipPathLeft> </ClipPathLeft>
       </ContenedorDiv>
     </div>
