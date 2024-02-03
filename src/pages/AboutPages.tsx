@@ -1,4 +1,4 @@
-import { ContainerImgFondo } from "../assets/styled/Universal"
+import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg"
 
 export const AboutPages = () => {
   return (
