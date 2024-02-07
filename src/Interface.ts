@@ -9,7 +9,7 @@ export interface IPropsTexto {
 }
 
 export interface IPropsAnimation {
-  Subtitle: string;
+  subtitle: string;
   title: string;
   text: string;
 }

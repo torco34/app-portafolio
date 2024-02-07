@@ -16,7 +16,7 @@ export const Header = () => {
     };
     return (
         <>
-            <Navbar expand="lg" className="show bg-dark ">
+            <Navbar expand="lg" className="shadow bg-dark ">
                 <Container>
                     <Navbar.Brand>
                         <PortfolioText>Portafolio</PortfolioText>

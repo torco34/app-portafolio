@@ -2,28 +2,30 @@ import {
   ClipPathRight,
   ContenedorDiv,
   ClipPathLeft,
-  TextBienvenida,
+
 } from "../../assets/styled/study/ClipPath";
 
 import { Texto } from "../common/Texto";
-
+import { Animation } from "../common/Animation"
 
 export const ClipPath = () => {
   return (
 
 
-    <div className="mx-auto max-w-6xl ">
+    <div className="mx-auto max-w-6xl relative top-10">
       <ContenedorDiv>
         <ClipPathRight></ClipPathRight>
-        <div className="borde grid-cols-2 z-1">
-          <TextBienvenida>¡BIENVENIDOS!</TextBienvenida>
+
+        <div className=" pb-7 borde z-1">
+          <Animation title="¡BIENVENIDOS!" subtitle=" MIS HABILIDADES TÉCNICAS." text="" />
+         
           <Texto
-            title="Descubriendo mis habilidades técnicas"
-            subtitles="Diseño: "
+            title=""
+            subtitles="Diseño:"
             text1=" HTML5, CSS3, Bootstrap, tailwindCss, styled-components "
-            text=" Programación:"
+            text="Programación:"
             text2="JavaScript, TypeScript y React"
-            additionalText="Herramientas: "
+            additionalText="Herramientas:"
             text3="Git, GitHub, Linux y VS Code" />
         </div>
 

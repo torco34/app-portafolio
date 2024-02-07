@@ -1,47 +1,51 @@
 // MyContext.tsx
-import React, { createContext, useContext, ReactNode, useState } from 'react';
-
+import React, { createContext, useContext, ReactNode, useState } from "react";
 
 interface ContextData {
-    nombre: string
+    buttonTexts: ButtonText[];
     username: string;
     setUsername: React.Dispatch<React.SetStateAction<string>>;
     setQuery: any;
     query: string;
-
 }
-
+type ButtonText = {
+    text: string;
+};
 
 const MyContext = createContext<ContextData | undefined>(undefined);
 
-
 interface ContextProviderProps {
     children: ReactNode;
-
 }
 
 export const ContextProvider = ({ children }: ContextProviderProps) => {
-    const [username, setUsername] = useState<string>(''); // Valor inicial
-    const [query, setQuery] = useState<string>('');
-    const nombre = "torcoroma"
+    const [username, setUsername] = useState<string>(""); // Valor inicial
+    const [query, setQuery] = useState<string>("");
+    //  mapear el botón de proyectos
+    const buttonTexts: ButtonText[] = [
+        { text: "Perfil de estudiante" },
+        { text: "tienda e-commerce digital" },
+        { text: "mapa de transporte" },
+        { text: "Plataforma de contenido" },
+        { text: "Plataforma peliculas" },
+    ];
+
     const contextValue: ContextData = {
         username,
         setUsername,
-        nombre,
+        buttonTexts,
         query,
-        setQuery
+        setQuery,
     };
 
-    return <MyContext.Provider value={contextValue}>{children}</MyContext.Provider>;
+    return (
+        <MyContext.Provider value={contextValue}>{children}</MyContext.Provider>
+    );
 };
 
 // Crear un hook personalizado para acceder al contexto
 export const useThemeContext = () => {
     const context = useContext(MyContext);
-
-    //   if (!context) {
-    //     throw new Error('useMyContext debe ser utilizado dentro de un MyContextProvider');
-    //   }
 
     return context;
 };
