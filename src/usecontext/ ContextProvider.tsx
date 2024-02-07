@@ -21,13 +21,15 @@ interface ContextProviderProps {
 export const ContextProvider = ({ children }: ContextProviderProps) => {
     const [username, setUsername] = useState<string>(""); // Valor inicial
     const [query, setQuery] = useState<string>("");
+// hook mostrar proyectos
+   
     //  mapear el botón de proyectos
     const buttonTexts: ButtonText[] = [
         { text: "Perfil de estudiante" },
         { text: "tienda e-commerce digital" },
         { text: "mapa de transporte" },
         { text: "Plataforma de contenido" },
-        { text: "Plataforma peliculas" },
+        { text: "Mi portafolio" },
     ];
 
     const contextValue: ContextData = {

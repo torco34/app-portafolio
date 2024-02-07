@@ -3,9 +3,10 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavStyled, PortfolioText } from "./styled/Header";
 import { Search } from "./Search";
 import { useThemeContext } from '../../usecontext/ ContextProvider';
+import { Hooks } from "../../hook/Hooks";
 
 export const Header = () => {
-
+const {} = Hooks()
     const { query, setQuery } = useThemeContext() ?? { query: '' };
     const history = useNavigate();
     const handleSearch = (searchQuery: string) => {
