@@ -1,41 +1,48 @@
 import styled from "styled-components";
 
-export const ClipPathRight = styled.h2`
-  width: 100%;
-  height: 1000px;
-  clip-path: polygon(0% 0%, 18% 0%, 0% 80%);
-  border: solid 20px;
-  font-weight: bold;
-  -webkit-background-clip: text;
-  background-clip: text;
-  border-image: linear-gradient(#37b5b6, #f2f597, #492e87);
-  color: white;
-  border-image-slice: 25;
-
-
-`;
-export const ContenedorDiv = styled.div`
-  height: 90vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-`;
+export const theme = {
+  dark: "#0A1D56",
+  purple: "#492E87",
+  aqua: "#37B5B6",
+  yellow: "#F2F597",
+};
 
 export const ClipPathLeft = styled.h2`
   width: 100%;
-  height: 1000px;
-  clip-path: polygon(100% 20%, 80% 70%, 100% 200%);
-  border: solid 20px;
+  height: 100px; /* Ajusta la altura según necesites */
+  clip-path: polygon(
+    100% 10%,
+    80% 50%,
+    100% 140%
+  ); /* Mantenemos la misma forma clip-path */
+  border: solid 5px;
   font-weight: bold;
   display: flex;
   position: relative;
   -webkit-background-clip: text;
   background-clip: text;
-  border-image: linear-gradient(#37b5b6, #492e87, #fde767, #37b5b6);
+  border-image: linear-gradient(
+    ${theme.purple},
+    ${theme.yellow},
+    ${theme.purple}
+  ); /* Gradiente para el borde */
   color: white;
-  border-image-slice: 3;
-  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
-  /* border: 2px solid rgba(255, 255, 255, 0.2); */
+  border-image-slice: 25;
 `;
 
+export const ClipPathRight = styled.h2`
+  width: 100%;
+  height: 100px; /* Ajusta la altura según necesites */
+  clip-path: polygon(0% 0%, 10% 0%, 0% 80%); /* Forma de clip-path */
+  border: solid 5px;
+  font-weight: bold;
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-image: linear-gradient(
+    ${theme.purple},
+    ${theme.yellow},
+    ${theme.purple}
+  ); /* Gradiente para el borde */
+  color: white;
+  border-image-slice: 25;
+`;

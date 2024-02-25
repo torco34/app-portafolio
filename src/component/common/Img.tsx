@@ -1,7 +1,14 @@
 import { IPropsImg } from "../../Interface"
 
 export const Img = ({ src, text}: IPropsImg) => {
-    return <img src={src} alt={text} width="100%" height="850vh" />;
+    return (
+      <img
+        className="object-cover w-full h-full"
+        src={src}
+        alt={text}
+      
+      />
+    );
    
 
 }
