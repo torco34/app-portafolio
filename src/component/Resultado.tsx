@@ -1,12 +1,21 @@
-import { useParams } from 'react-router-dom'
-
-export const Resultado = ({match}: any) => {
+import { useParams } from "react-router-dom";
+import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg";
+import { Texto } from "./common/Texto";
+export const Resultado = ({ match }: any) => {
   const { searchQuery } = useParams();
   return (
-    <div>
-          <h2 className='text-ligh'>Resultados de la búsqueda para {searchQuery}</h2>
-          Resultados para: {searchQuery}
-     
-    </div>
-  )
-}
+    <ContainerImgFondo>
+      <div className="flex justify-center items-center h-96 mx-auto max-w-6xl relative top-10">
+        <Texto
+          title=""
+          subtitles="LO SIENTO PERO SE DEBE BUSCAR POR NOMBRE"
+          text1=""
+          text="EJEMPLO: STUDY, PROYECTS, ABOUT, CONTACTO"
+          text2=""
+          additionalText="GRACIAS!"
+          text3=""
+        />
+      </div>
+    </ContainerImgFondo>
+  );
+};

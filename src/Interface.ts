@@ -23,3 +23,13 @@ export interface IPropsImg {
   title: string;
   text: string;
 }
+export interface IPropsModal {
+  text: string;
+ onClick: (() => void) | undefined
+  username: string;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+  handleClose: React.Dispatch<React.SetStateAction<string>>;
+  onHide?: (() => void) | undefined;
+  setQuery: any;
+  query: string;
+}

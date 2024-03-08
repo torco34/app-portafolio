@@ -1,17 +1,16 @@
 // MyContext.tsx
 import React, { createContext, useContext, ReactNode, useState } from "react";
-
+import { Hooks } from "../hook/Hooks";
 interface ContextData {
   buttonTexts: ButtonText[];
   username: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
+
   setQuery: any;
   query: string;
- 
 }
 type ButtonText = {
   text: string;
- 
 };
 
 const MyContext = createContext<ContextData | undefined>(undefined);
@@ -24,7 +23,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [username, setUsername] = useState<string>(""); // Valor inicial
   const [query, setQuery] = useState<string>("");
   // hook mostrar proyectos
-
+  // const { setShow, show, setSelectedText } = Hooks();
   //  mapear el botón de proyectos
   const buttonTexts: ButtonText[] = [
     { text: "Perfil de estudiante" },
@@ -33,8 +32,8 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     { text: "Plataforma de contenido" },
     { text: "Mi portafolio" },
   ];
-
-
+  // uso del modal
+ 
   const contextValue: ContextData = {
     username,
     setUsername,
