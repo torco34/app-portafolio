@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const theme = {
   dark: "#0A1D56",
   purple: "#492E87",
-  aqua: "#37B5B6",
+  //  purple: "#EEF5FF",
+  aqua: "#265073",
   yellow: "#F2F597"
 };
 
@@ -19,7 +20,7 @@ export const ContainerImgFondo = styled.div`
   animation: gradientAnimation 30s ease infinite; 
   background-position: center;
 
-  @keyframes gradientAnimation {
+  /* @keyframes gradientAnimation {
     0% {
       background-position: 0% 50%;
     }
@@ -29,7 +30,7 @@ export const ContainerImgFondo = styled.div`
     100% {
       background-position: 0% 50%;
     }
-  }
+  } */
 
   &::before {
     content: "";
@@ -38,6 +39,6 @@ export const ContainerImgFondo = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Capa de opacidad para suavizar los colores */
+    background-color: rgba(255, 255, 255, 0.6); /* Capa de opacidad para suavizar los colores */
   }
 `;

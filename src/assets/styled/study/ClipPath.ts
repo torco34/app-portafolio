@@ -21,12 +21,9 @@ export const ClipPathLeft = styled.h2`
   position: relative;
   -webkit-background-clip: text;
   background-clip: text;
-  border-image: linear-gradient(
-    ${theme.purple},
-    ${theme.yellow},
-    ${theme.purple}
-  ); /* Gradiente para el borde */
-  color: white;
+  border-image: linear-gradient(${theme.purple}); /* Gradiente para el borde */
+  color: #0a1d56;
+
   border-image-slice: 25;
 `;
 
@@ -39,10 +36,10 @@ export const ClipPathRight = styled.h2`
   -webkit-background-clip: text;
   background-clip: text;
   border-image: linear-gradient(
+    /* ${theme.purple},
     ${theme.purple},
-    ${theme.yellow},
-    ${theme.purple}
+    ${theme.purple} */
   ); /* Gradiente para el borde */
-  color: white;
+  color: #0a1d56;
   border-image-slice: 25;
 `;
