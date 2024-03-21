@@ -6,8 +6,10 @@ import { useThemeContext } from "../../usecontext/ ContextProvider";
 import { Hooks } from "../../hook/Hooks";
 
 import { Language } from "./Language";
+import { TextLanguage } from "./TextLanguage";
 export const Header = () => {
-  const {} = Hooks();
+  const { showText } = Hooks();
+  console.log(showText)
   const { query, setQuery } = useThemeContext() ?? { query: "" };
   const history = useNavigate();
   const handleSearch = (searchQuery: string) => {
@@ -39,7 +41,12 @@ export const Header = () => {
           {/* <BsGlobe2 className=" w-6 h-6 text-stone-300"  /> */}
         </Container>
       </Navbar>
-
+     
+      {showText && (
+        <>
+          <TextLanguage />
+        </>
+      )}
       <Outlet />
     </>
   );
