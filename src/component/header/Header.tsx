@@ -8,13 +8,17 @@ import { Hooks } from "../../hook/Hooks";
 import { Language } from "./Language";
 import { TextLanguage } from "./TextLanguage";
 export const Header = () => {
-  const { showText } = Hooks();
-  console.log(showText)
+  const { showText, setShowText} =
+    Hooks();
+  console.log(showText);
   const { query, setQuery } = useThemeContext() ?? { query: "" };
   const history = useNavigate();
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);
     history(`${searchQuery}`);
+  };
+  const handleLanguageToggle = () => {
+    setShowText(!showText);
   };
   return (
     <>
@@ -36,17 +40,16 @@ export const Header = () => {
             </Nav>
 
             <Search onSearch={handleSearch} query={query} />
+            <div className="space-5">
+              <Language
+                showText={showText}
+                handleLanguageToggle={handleLanguageToggle}
+              />
+            </div>
           </Navbar.Collapse>
-          <Language />
-          {/* <BsGlobe2 className=" w-6 h-6 text-stone-300"  /> */}
         </Container>
       </Navbar>
-     
-      {showText && (
-        <>
-          <TextLanguage />
-        </>
-      )}
+
       <Outlet />
     </>
   );

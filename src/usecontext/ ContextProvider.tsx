@@ -5,7 +5,8 @@ interface ContextData {
   buttonTexts: ButtonText[];
   username: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
-
+  setSelectedText: React.Dispatch<React.SetStateAction<string>> | undefined;
+  selectedText: any;
   setQuery: any;
   query: string;
 }
@@ -22,6 +23,8 @@ interface ContextProviderProps {
 export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [username, setUsername] = useState<string>(""); // Valor inicial
   const [query, setQuery] = useState<string>("");
+  const [selectedText, setSelectedText] = useState<string>("Lenguaje");
+  const [showText, setShowText] = useState<boolean>(false);
   // hook mostrar proyectos
   // const { setShow, show, setSelectedText } = Hooks();
   //  mapear el botón de proyectos
@@ -33,13 +36,15 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     { text: "Mi portafolio" },
   ];
   // uso del modal
- 
+
   const contextValue: ContextData = {
     username,
     setUsername,
     buttonTexts,
     query,
     setQuery,
+    selectedText,
+    setSelectedText,
    
   };
 

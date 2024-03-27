@@ -13,14 +13,14 @@ export const ContainerImgFondo = styled.div`
   color: #333;
   padding: 0px;
   margin: 0px;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   background: linear-gradient(135deg, ${theme.dark}, ${theme.purple}, ${theme.aqua}, ${theme.yellow});
   background-size: 600% 600%; 
   animation: gradientAnimation 30s ease infinite; 
   background-position: center;
 
-  /* @keyframes gradientAnimation {
+  @keyframes gradientAnimation {
     0% {
       background-position: 0% 50%;
     }
@@ -30,7 +30,7 @@ export const ContainerImgFondo = styled.div`
     100% {
       background-position: 0% 50%;
     }
-  } */
+  }
 
   &::before {
     content: "";
