@@ -26,6 +26,7 @@ export const ContainerImgFondo = styled.div`
   animation: gradientAnimation 30s ease infinite;
   background-position: center;
 
+
   @keyframes gradientAnimation {
     0% {
       background-position: 0% 50%;
