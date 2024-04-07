@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useTrail, a } from "@react-spring/web";
 import { IPropsAnimation } from "../../Interface";
-import { TextBienvenida } from "../../assets/styled/common/Animacion";
+import {
+  TextBienvenida,
+  SubTitle,
+  Text,
+} from "../../assets/styled/common/Animacion";
 
 const Trail: React.FC<{ open: boolean; children?: React.ReactNode }> = ({
   open,
@@ -27,17 +31,13 @@ const Trail: React.FC<{ open: boolean; children?: React.ReactNode }> = ({
 };
 
 export const Animation = ({ title, subtitle, text }: IPropsAnimation) => {
-  const [open, set] = useState(true);
+  const [open] = useState(true);
   return (
-    <div className="relative  flex items-center p-8 ">
+    <div className=" md:font-serif font-bold items-center  ">
       <Trail open={open}>
         <TextBienvenida>{title}</TextBienvenida>
-        <span className="font-sans  text-violet-900 md:font-serif text-center font-bold px-10 text-3xl">
-          {subtitle}
-        </span>
-        <span className="font-sans text-cyan-700 md:font-serif text-center font-bold px-10 text-2xl">
-          {text}
-        </span>
+        <SubTitle>{subtitle}</SubTitle>
+        <Text>{text}</Text>
       </Trail>
     </div>
   );

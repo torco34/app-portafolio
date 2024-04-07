@@ -10,6 +10,6 @@ export const ContactPages = () => {
         <Animation title="CONTACTOS" subtitle="CONTÁCTEME AQUÍ" text="" />
         <ContactForm/>
       </div>
-    </ContainerImgFondo>
+      </ContainerImgFondo>
   );
 };

@@ -40,7 +40,7 @@ export const Header = () => {
             </Nav>
 
             <Search onSearch={handleSearch} query={query} />
-            <div className="space-5">
+            <div className="space cursor-pointer  ">
               <Language
                 showText={showText}
                 handleLanguageToggle={handleLanguageToggle}

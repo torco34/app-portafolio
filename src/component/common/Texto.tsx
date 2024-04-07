@@ -12,7 +12,7 @@ export const Texto = ({
 }: IPropsTexto) => {
   return (
     <TextContainer>
-      <h2 className="px-5 text-xl pb- font-bold" style={{ color: "#F2F597" }}>
+      <h2 className="px-5 text-xl  font-bold" style={{ color: "#F2F597" }}>
         {title}
       </h2>
       <h3

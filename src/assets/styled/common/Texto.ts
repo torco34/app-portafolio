@@ -16,5 +16,7 @@ export const TextContainer = styled.div`
   z-index: 1;
   margin-top: 3rem;
   border-image-slice: 3;
-  margin-left: 6rem;
+  margin-left: 0rem;
+  font-family: sans-serif;
+  
 `;
