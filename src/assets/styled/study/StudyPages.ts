@@ -29,6 +29,7 @@ export const ContainerDiv = styled.div`
   flex-direction: column;
   height: 100vh;
   color: #fff;
+  border: solid red;
   z-index: 5;
 `;
 export const TitleH1 = styled.h1`

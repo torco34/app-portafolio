@@ -13,7 +13,7 @@ export const ContainerImgFondo = styled.div`
   color: #333;
   padding: 0px;
   margin: 0px;
-  /* height: 100vh; */
+ 
   /* width: 100%; */
   background: linear-gradient(
     135deg,

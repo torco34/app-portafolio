@@ -10,19 +10,22 @@ export const theme = {
 export const SubTitle = styled.span`
   display: flex;
   flex-direction: column;
-  
   font-weight: bold;
-  font-size: calc(1em + 0.6vw);
+  font-size: calc(0.7em + 0.7vw);
+  position: relative;
+  top: 0px;
+   padding-left: 20px;
   color: #492e87; /* Color del texto */
 `;
 
 export const TextBienvenida = styled.h2`
   position: relative;
+  padding-left: 20px;
+  top: -50px;
   z-index: 1;
-
   font-weight: bold;
   color: transparent;
-  font-size: calc(1.4em + 1.4vw);
+  font-size: calc(1.4em + 1vw);
   background: linear-gradient(
     to right,
     ${theme.purple},
@@ -36,5 +39,7 @@ export const Text = styled.span`
   z-index: 1;
   font-weight: bold;
   color: #51829b;
-  font-size: calc(1em + 0.6vw);
+  position: absolute;
+ padding-left: 20px;
+  font-size: calc(0.7em + 0.6vw);
 `;

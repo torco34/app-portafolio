@@ -8,5 +8,5 @@ export const ResponsiveText = styled.h2`
   line-height: 72px;
   margin: 0 3rem;
   font-weight: bold;
-  font-size: calc(1em + 1vw);
+  font-size: calc(0.5em + 0.5vw);
 `;

@@ -9,7 +9,7 @@ export const theme = {
 
 export const ClipPathLeft = styled.h2`
   width: 100%;
-  height: 100px; /* Ajusta la altura según necesites */
+  height: 90px; /* Ajusta la altura según necesites */
   clip-path: polygon(
     100% 10%,
     80% 50%,
@@ -29,7 +29,7 @@ export const ClipPathLeft = styled.h2`
 
 export const ClipPathRight = styled.h2`
   width: 100%;
-  height: 100px; /* Ajusta la altura según necesites */
+  height: 80px; /* Ajusta la altura según necesites */
   clip-path: polygon(0% 0%, 10% 0%, 0% 80%); /* Forma de clip-path */
   border: solid 5px;
   font-weight: bold;

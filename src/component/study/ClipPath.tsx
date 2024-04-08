@@ -16,8 +16,8 @@ export const ClipPath = () => {
           subtitle="A MI EDUCACIÓN."
           text="FORMAS DE ESTUDIO:"
         />
-      </div>
-      <div>
+      {/* </div>
+      <div> */}
         <Texto
           title=""
           subtitles="PRESENCIAL   Front-End:"

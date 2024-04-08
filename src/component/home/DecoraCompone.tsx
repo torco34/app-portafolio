@@ -7,16 +7,14 @@ import { Texto } from "../common/Texto";
 
 export const DecoraCompone = () => {
   return (
-    <div className="mx-auto  gap-4 md:justify-center  max-w-6xl relative p-10">
-      <ClipPathRight></ClipPathRight>
-      <div className="">
+    <div className="mx-auto h-screen md:justify-center  max-w-6xl relative p-0">
+      <div className="borde p-8 border mb-10">
+        <ClipPathRight></ClipPathRight>
         <Animation
           title="¡TORCOROMA ARIAS ASCANIO!"
           subtitle=" DESARROLLADORA WEB FRONT-END."
           text="HABILIDADES:"
         />
-      </div>
-      <div className="">
         <Texto
           title=""
           subtitles="DISEÑO:"
@@ -26,8 +24,8 @@ export const DecoraCompone = () => {
           additionalText="HERRAMIENTAS:"
           text3="Git, GitHub, Linux y VS Code"
         />
+        <ClipPathLeft> </ClipPathLeft>
       </div>
-      <ClipPathLeft> </ClipPathLeft>
     </div>
   );
 };
