@@ -4,20 +4,38 @@ import { NavStyled, PortfolioText } from "./styled/Header";
 import { Search } from "./Search";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
 import { Hooks } from "../../hook/Hooks";
-
+import { BsGlobe2, BsFillCaretDownFill } from "react-icons/bs";
 import { Language } from "./Language";
 import { TextLanguage } from "./TextLanguage";
+import { CustomButton } from "../common/CustomButton";
+import { ModalBox } from "../common/ModalBox";
+import { useState } from "react";
 export const Header = () => {
-  const { showText, setShowText} =
-    Hooks();
-  console.log(showText);
-  const { query, setQuery } = useThemeContext() ?? { query: "" };
+
+  const { query, setQuery, selectedLanguage } = useThemeContext() ?? {
+    query: "",
+  };
   const history = useNavigate();
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);
     history(`${searchQuery}`);
   };
-  const handleLanguageToggle = () => {
+  const { showText, setShowText } = Hooks();
+  console.log(showText);
+ 
+    const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleViewProjectClick = () => {
+    // Lógica para manejar el clic en "Ver proyecto"
+  };
+
+  const handleShow = () => {
     setShowText(!showText);
   };
   return (
@@ -40,10 +58,22 @@ export const Header = () => {
             </Nav>
 
             <Search onSearch={handleSearch} query={query} />
-            <div className="space cursor-pointer  ">
-              <Language
-                showText={showText}
-                handleLanguageToggle={handleLanguageToggle}
+            <div className="px-5 cursor-pointer  ">
+              <CustomButton
+                text={selectedLanguage}
+                className="bg-slate-100 flex text-stone-500 w-120 h-19 rounded"
+                icon={<BsGlobe2 className=" w-6 h-6 text-stone-500" />}
+                onClick={handleShowModal}
+                onMouseOut={() => console.log("Mouse fuera del botón")}
+              />
+              <ModalBox
+                show={showModal}
+                onClose={handleCloseModal}
+                title="Título del Modal"
+                text="Texto del Modal"
+                imageURL="URL de la imagen"
+                onViewProjectText="Ver proyecto"
+                onViewProjectClick={handleViewProjectClick}
               />
             </div>
           </Navbar.Collapse>

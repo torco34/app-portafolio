@@ -8,7 +8,7 @@ import { Texto } from "../common/Texto";
 export const DecoraCompone = () => {
   return (
     <div className="mx-auto h-screen md:justify-center  max-w-6xl relative p-0">
-      <div className="borde p-8 border mb-10">
+      <div className=" p-8 borde mb-10">
         <ClipPathRight></ClipPathRight>
         <Animation
           title="¡TORCOROMA ARIAS ASCANIO!"

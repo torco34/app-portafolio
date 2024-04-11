@@ -3,7 +3,7 @@ import { useState } from "react";
 export const Hooks = () => {
   const [username, setUsername] = useState<string | undefined>();
   const [show, setShow] = useState<boolean>(false);
-  // const [selectedText, setSelectedText] = useState<string | null>("");
+  // const [selectedLanguage, setSelectedLanguage] = useState<string | null>("");
   const [buttonText, setButtonText] = useState<string[] | null>([
     "Language",
     "Ingles",
@@ -15,7 +15,7 @@ export const Hooks = () => {
   return {
     username,
     setUsername,
-    
+
     show,
     setShow,
     showText,

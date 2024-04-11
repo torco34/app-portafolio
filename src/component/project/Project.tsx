@@ -7,14 +7,15 @@ import img1 from "../../assets/img/img1.jpg";
 import { IPropsModal } from "../../Interface";
 
 export const Project = () => {
-  const { buttonTexts } = useThemeContext() ?? {
+  const { buttonTexts, projectNames, setProjectNames } = useThemeContext() ?? {
     buttonTexts: [],
   };
-  const { selectedText, setSelectedText, show, setShow } = Hooks();
+
+  const { show, setShow } = Hooks();
   const handleClose = () => setShow(false);
   const handleShow = (text: any) => {
     setShow(true);
-    setSelectedText(text);
+    setProjectNames(text);
   };
 
   return (
@@ -30,7 +31,7 @@ export const Project = () => {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>{selectedText}</Modal.Title>
+            <Modal.Title>{projectNames}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className=" ">

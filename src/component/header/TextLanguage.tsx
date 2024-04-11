@@ -1,17 +1,15 @@
 import { Hooks } from "../../hook/Hooks";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
 export const TextLanguage = () => {
-  const { buttonText,  } = Hooks();
-  const { setSelectedText } = useThemeContext() ?? {
-    setSelectedText: undefined,
-    selectedText: "",
+  const { buttonText } = Hooks();
+  const { setSelectedLanguage } = useThemeContext() ?? {
+    setSelectedLanguage: undefined,
+    selectedLanguage: "",
   };
   const handleLanguageClick = (text: string) => {
-    if (setSelectedText) {
-      setSelectedText(text);
-       
+    if (setSelectedLanguage) {
+      setSelectedLanguage(text);
     }
-   
   };
 
   return (

@@ -1,7 +1,7 @@
 import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg";
 import { Animation } from "../component/common/Animation";
 import ContactForm from "../component/form/ContactForm";
-import LoginForm from "../component/form/LoginForm";
+
 
 export const ContactPages = () => {
   return (

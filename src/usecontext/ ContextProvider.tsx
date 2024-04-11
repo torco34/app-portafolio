@@ -4,9 +4,11 @@ import { Hooks } from "../hook/Hooks";
 interface ContextData {
   buttonTexts: ButtonText[];
   username: string;
+  projectNames: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
-  setSelectedText: React.Dispatch<React.SetStateAction<string>> | undefined;
-  selectedText: any;
+  setSelectedLanguage: React.Dispatch<React.SetStateAction<string>> | undefined;
+  setProjectNames: React.Dispatch<React.SetStateAction<string>> | undefined;
+  selectedLanguage: any;
   setQuery: any;
   query: string;
 }
@@ -23,10 +25,11 @@ interface ContextProviderProps {
 export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [username, setUsername] = useState<string>(""); // Valor inicial
   const [query, setQuery] = useState<string>("");
-  const [selectedText, setSelectedText] = useState<string>("Lenguaje");
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("Lenguaje");
   const [showText, setShowText] = useState<boolean>(false);
+    const [projectNames, setProjectNames] = useState<string>("");
   // hook mostrar proyectos
-  // const { setShow, show, setSelectedText } = Hooks();
+  // const { setShow, show, setSelectedLanguage } = Hooks();
   //  mapear el botón de proyectos
   const buttonTexts: ButtonText[] = [
     { text: "Perfil de estudiante" },
@@ -43,9 +46,10 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     buttonTexts,
     query,
     setQuery,
-    selectedText,
-    setSelectedText,
-   
+    selectedLanguage,
+    setSelectedLanguage,
+    projectNames,
+    setProjectNames,
   };
 
   return (

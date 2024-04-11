@@ -33,7 +33,7 @@ const Trail: React.FC<{ open: boolean; children?: React.ReactNode }> = ({
 export const Animation = ({ title, subtitle, text }: IPropsAnimation) => {
   const [open] = useState(true);
   return (
-    <div className=" border-red-200 md:font-serif font-bold items-center  ">
+    <div className=" md:font-serif font-bold items-center  ">
       <Trail open={open}>
         <TextBienvenida>{title}</TextBienvenida>
         <SubTitle>{subtitle}</SubTitle>
