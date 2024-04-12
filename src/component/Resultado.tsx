@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
+
 import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg";
 import { Texto } from "./common/Texto";
-export const Resultado = ({ match }: any) => {
-  const { searchQuery } = useParams();
+export const Resultado = () => {
+
   return (
     <ContainerImgFondo>
       <div className="flex justify-center items-center h-96 mx-auto max-w-6xl relative top-10">

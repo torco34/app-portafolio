@@ -1,26 +1,26 @@
-import Modal from "react-bootstrap/Modal";
-import { Buttons } from "../common/Buttons";
-import { Hooks } from "../../hook/Hooks";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
-import { Img } from "../common/Img";
 import img1 from "../../assets/img/img1.jpg";
-
 import { BsCodeSlash } from "react-icons/bs";
 import { ModalBox } from "../common/ModalBox";
 import { useState } from "react";
 import { CustomButton } from "../common/CustomButton";
 
 export const Project = () => {
-  const { buttonTexts, projectNames, setProjectNames } = useThemeContext() ?? {
-    buttonTexts: [],
-  };
+  const { buttonTexts, projectNames, setProjectNames, setShowComponent } =
+    useThemeContext() ?? {
+      buttonTexts: [],
+    };
 
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = (text: string) => {
     if (setProjectNames) {
       setProjectNames(text);
+      setShowModal(true);
     }
-    setShowModal(true);
+    if (setShowComponent) {
+      setShowModal(true);
+      setShowComponent(false);
+    }
   };
   const handleCloseModal = () => {
     setShowModal(false);
@@ -49,7 +49,7 @@ export const Project = () => {
           show={showModal}
           onClose={handleCloseModal}
           title={projectNames}
-          text={"estilos"}
+          text={`Este proyecto esta hecho con react ${projectNames}`}
           imageURL={img1}
           onViewProjectText="Ver proyecto"
           onViewProjectClick={handleViewProjectClick}

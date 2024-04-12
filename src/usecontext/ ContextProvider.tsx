@@ -1,18 +1,20 @@
 // MyContext.tsx
 import React, { createContext, useContext, ReactNode, useState } from "react";
-import { Hooks } from "../hook/Hooks";
+
 interface ContextData {
   buttonTexts: ButtonText[];
   language: ButtonText[];
   username: string;
   showText: boolean;
   showModal: boolean;
+  showComponent: boolean;
   projectNames: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>> | undefined;
   setProjectNames: React.Dispatch<React.SetStateAction<string>> | undefined;
   setShowText: React.Dispatch<React.SetStateAction<boolean>>;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowComponent: React.Dispatch<React.SetStateAction<boolean>>;
   selectedLanguage: any;
   setQuery: any;
   query: string;
@@ -32,11 +34,10 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [query, setQuery] = useState<string>("");
   const [selectedLanguage, setSelectedLanguage] = useState<string>("Lenguaje");
   const [showText, setShowText] = useState<boolean>(false);
-   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [showComponent, setShowComponent] = useState<boolean>(false);
   const [projectNames, setProjectNames] = useState<string>("");
-  // hook mostrar proyectos
-  // const { setShow, show, setSelectedLanguage } = Hooks();
-  //  mapear el botón de proyectos
+
   const buttonTexts: ButtonText[] = [
     { text: "Perfil de estudiante" },
     { text: "tienda e-commerce digital" },
@@ -63,6 +64,8 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     setShowText,
     showModal,
     setShowModal,
+    showComponent,
+    setShowComponent,
   };
 
   return (
@@ -73,6 +76,5 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
 // Crear un hook personalizado para acceder al contexto
 export const useThemeContext = () => {
   const context = useContext(MyContext);
-
   return context;
 };

@@ -26,24 +26,23 @@ export const ModalBox: React.FC<ModalBoxProps> = ({
   onViewProjectText = "Ver proyecto",
   onViewProjectClick,
 }) => {
-  const { language, setSelectedLanguage, showText, setShowModal} =
+  const { language, setSelectedLanguage, showComponent } =
     useThemeContext() ?? {
       language: [],
     };
   const handleLanguages = (text: any) => {
-  
     if (setSelectedLanguage) {
       setSelectedLanguage(text);
     }
-   
   };
+
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton className="bg-violet-300 flex item-align">
         <Modal.Title className="">{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {!showText && (
+        {showComponent ? (
           <>
             {language.map((items: any, index) => (
               <>
@@ -58,14 +57,18 @@ export const ModalBox: React.FC<ModalBoxProps> = ({
               </>
             ))}
           </>
+        ) : (
+          <div className=" ">
+            <Img src={imageURL} text="toto" title="mi foto" />
+            <h4 className="pt-8">{text}</h4>
+            <Buttons text={onCloseText} onClick={onClose} />
+            {onViewProjectClick && (
+              <Buttons text={onViewProjectText} onClick={onViewProjectClick} />
+            )}
+          </div>
         )}
-      
       </Modal.Body>
       <Modal.Footer></Modal.Footer>
     </Modal>
   );
 };
-
-
-
-

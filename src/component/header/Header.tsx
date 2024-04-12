@@ -3,41 +3,34 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavStyled, PortfolioText } from "./styled/Header";
 import { Search } from "./Search";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
-import { Hooks } from "../../hook/Hooks";
 import { BsGlobe2 } from "react-icons/bs";
-import { Language } from "./Language";
-// import { TextLanguage } from "./TextLanguage";
 import { CustomButton } from "../common/CustomButton";
 import { ModalBox } from "../common/ModalBox";
 import { useState } from "react";
 export const Header = () => {
-  const { query, setQuery, selectedLanguage } = useThemeContext() ?? {
-    query: "",
-  };
+  const { query, setQuery, selectedLanguage, setShowComponent } =
+    useThemeContext() ?? {
+      query: "",
+    };
   const history = useNavigate();
   const handleSearch = (searchQuery: string) => {
     setQuery(searchQuery);
     history(`${searchQuery}`);
   };
-  // const { showText, setShowText } = Hooks();
-  // console.log(showText);
 
   const [showModal, setShowModal] = useState(false);
-  const handleShowModal = () => {
+  const handleShowModalHeader = () => {
+    if (setShowComponent) {
+      setShowComponent(true);
+    }
     setShowModal(true);
-    // setShowText(true);
   };
   const handleCloseModal = () => {
     setShowModal(false);
   };
 
-  const handleViewProjectClick = () => {
-    // Lógica para manejar el clic en "Ver proyecto"
-  };
+  const handleViewProjectClick = () => {};
 
-  // const handleShow = () => {
-  //   setShowText(!showText);
-  // };
   return (
     <>
       <Navbar expand="lg" className="shadow bg-dark ">
@@ -63,7 +56,7 @@ export const Header = () => {
                 text={selectedLanguage}
                 className="bg-slate-100 flex text-stone-500 w-120 h-19 rounded"
                 icon={<BsGlobe2 className=" w-6 h-6 text-stone-500" />}
-                onClick={handleShowModal}
+                onClick={handleShowModalHeader}
                 onMouseOut={() => console.log("Mouse fuera del botón")}
               />
               <ModalBox

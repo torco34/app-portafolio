@@ -13,7 +13,7 @@ export const Search = ({ onSearch }: IPropsSearch) => {
     const handleSubmit = (e: any) => {
         e.preventDefault();
         onSearch(query);
-        console.log("quer")
+        
     };
     return (
         <div>
