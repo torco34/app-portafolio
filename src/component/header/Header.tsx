@@ -4,14 +4,13 @@ import { NavStyled, PortfolioText } from "./styled/Header";
 import { Search } from "./Search";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
 import { Hooks } from "../../hook/Hooks";
-import { BsGlobe2, BsFillCaretDownFill } from "react-icons/bs";
+import { BsGlobe2 } from "react-icons/bs";
 import { Language } from "./Language";
-import { TextLanguage } from "./TextLanguage";
+// import { TextLanguage } from "./TextLanguage";
 import { CustomButton } from "../common/CustomButton";
 import { ModalBox } from "../common/ModalBox";
 import { useState } from "react";
 export const Header = () => {
-
   const { query, setQuery, selectedLanguage } = useThemeContext() ?? {
     query: "",
   };
@@ -20,12 +19,13 @@ export const Header = () => {
     setQuery(searchQuery);
     history(`${searchQuery}`);
   };
-  const { showText, setShowText } = Hooks();
-  console.log(showText);
- 
-    const [showModal, setShowModal] = useState(false);
+  // const { showText, setShowText } = Hooks();
+  // console.log(showText);
+
+  const [showModal, setShowModal] = useState(false);
   const handleShowModal = () => {
     setShowModal(true);
+    // setShowText(true);
   };
   const handleCloseModal = () => {
     setShowModal(false);
@@ -35,9 +35,9 @@ export const Header = () => {
     // Lógica para manejar el clic en "Ver proyecto"
   };
 
-  const handleShow = () => {
-    setShowText(!showText);
-  };
+  // const handleShow = () => {
+  //   setShowText(!showText);
+  // };
   return (
     <>
       <Navbar expand="lg" className="shadow bg-dark ">
@@ -69,9 +69,9 @@ export const Header = () => {
               <ModalBox
                 show={showModal}
                 onClose={handleCloseModal}
-                title="Título del Modal"
-                text="Texto del Modal"
-                imageURL="URL de la imagen"
+                title="Elija su idioma"
+                text={selectedLanguage}
+                imageURL=""
                 onViewProjectText="Ver proyecto"
                 onViewProjectClick={handleViewProjectClick}
               />

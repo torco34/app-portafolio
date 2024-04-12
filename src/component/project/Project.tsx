@@ -4,51 +4,56 @@ import { Hooks } from "../../hook/Hooks";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
 import { Img } from "../common/Img";
 import img1 from "../../assets/img/img1.jpg";
-import { IPropsModal } from "../../Interface";
+
+import { BsCodeSlash } from "react-icons/bs";
+import { ModalBox } from "../common/ModalBox";
+import { useState } from "react";
+import { CustomButton } from "../common/CustomButton";
 
 export const Project = () => {
   const { buttonTexts, projectNames, setProjectNames } = useThemeContext() ?? {
     buttonTexts: [],
   };
 
-  const { show, setShow } = Hooks();
-  const handleClose = () => setShow(false);
-  const handleShow = (text: any) => {
-    setShow(true);
-    setProjectNames(text);
+  const [showModal, setShowModal] = useState(false);
+  const handleShowModal = (text: string) => {
+    if (setProjectNames) {
+      setProjectNames(text);
+    }
+    setShowModal(true);
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleViewProjectClick = () => {
+    // Lógica para manejar el clic en "Ver proyecto"
   };
 
   return (
     <div className="mx-auto max-w-6xl ">
       <>
         {buttonTexts.map((buttonText, index) => (
-          <Buttons
+          <CustomButton
             key={index}
             text={buttonText.text}
-            onClick={() => handleShow(buttonText.text)}
+            className=" flex text-purple-950 w-120 h-19 rounded"
+            icon={
+              <BsCodeSlash className=" w-9 h-9  rounded text-blue-700 text-4xl" />
+            }
+            onClick={() => handleShowModal(buttonText.text)}
+            onMouseOut={() => console.log("Mouse fuera del botón")}
           />
         ))}
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{projectNames}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className=" ">
-              <Img src={img1} text="foto" title="" />
-              <h4 className="pt-8">
-                lorem*24 Lorem ipsum dolor sit, amet consectetur adipisicing
-                elit. Debitis repellendus beatae similique accusantium modi
-                possimus animi exercitationem et illo assumenda, dolor
-                distinctio a deserunt cum
-              </h4>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Buttons text="Cerrar" onClick={handleClose} />
-            <Buttons text="Ver proyecto" onClick={handleClose} />
-          </Modal.Footer>
-        </Modal>
+        <ModalBox
+          show={showModal}
+          onClose={handleCloseModal}
+          title={projectNames}
+          text={"estilos"}
+          imageURL={img1}
+          onViewProjectText="Ver proyecto"
+          onViewProjectClick={handleViewProjectClick}
+        />
       </>
     </div>
   );

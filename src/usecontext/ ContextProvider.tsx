@@ -3,11 +3,16 @@ import React, { createContext, useContext, ReactNode, useState } from "react";
 import { Hooks } from "../hook/Hooks";
 interface ContextData {
   buttonTexts: ButtonText[];
+  language: ButtonText[];
   username: string;
+  showText: boolean;
+  showModal: boolean;
   projectNames: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
   setSelectedLanguage: React.Dispatch<React.SetStateAction<string>> | undefined;
   setProjectNames: React.Dispatch<React.SetStateAction<string>> | undefined;
+  setShowText: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   selectedLanguage: any;
   setQuery: any;
   query: string;
@@ -27,7 +32,8 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [query, setQuery] = useState<string>("");
   const [selectedLanguage, setSelectedLanguage] = useState<string>("Lenguaje");
   const [showText, setShowText] = useState<boolean>(false);
-    const [projectNames, setProjectNames] = useState<string>("");
+   const [showModal, setShowModal] = useState<boolean>(false);
+  const [projectNames, setProjectNames] = useState<string>("");
   // hook mostrar proyectos
   // const { setShow, show, setSelectedLanguage } = Hooks();
   //  mapear el botón de proyectos
@@ -38,6 +44,8 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     { text: "Plataforma de contenido" },
     { text: "Mi portafolio" },
   ];
+
+  const language: ButtonText[] = [{ text: "Espanol" }, { text: "Ingles" }];
   // uso del modal
 
   const contextValue: ContextData = {
@@ -50,6 +58,11 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
     setSelectedLanguage,
     projectNames,
     setProjectNames,
+    language,
+    showText,
+    setShowText,
+    showModal,
+    setShowModal,
   };
 
   return (
