@@ -38,8 +38,13 @@ export const ModalBox: React.FC<ModalBoxProps> = ({
 
   return (
     <Modal show={show} onHide={onClose}>
-      <Modal.Header closeButton className="bg-violet-300 flex item-align">
-        <Modal.Title className="">{title}</Modal.Title>
+      <Modal.Header
+        closeButton
+        className="bg-violet-300 flex item-align font-bold"
+      >
+        <Modal.Title className="font-bold font-serif flex item-align">
+          {title}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {showComponent ? (
@@ -63,7 +68,13 @@ export const ModalBox: React.FC<ModalBoxProps> = ({
             <h4 className="pt-8">{text}</h4>
             <Buttons text={onCloseText} onClick={onClose} />
             {onViewProjectClick && (
-              <Buttons text={onViewProjectText} onClick={onViewProjectClick} />
+              <div>
+                <Buttons
+                  text={onViewProjectText}
+                  onClick={onViewProjectClick}
+                  />
+                <a href="https://torco34.github.io/peaku-templete-first/">proyecto</a>
+              </div>
             )}
           </div>
         )}

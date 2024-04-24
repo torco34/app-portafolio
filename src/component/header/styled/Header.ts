@@ -11,7 +11,7 @@ export const NavStyled = styled.nav`
 
 
 export const PortfolioText = styled.span`
-  /* Estilos de texto nombre portafolio */
+  
   font-size: 24px; /* Tamaño del texto */
   font-weight: bold; /* Peso de la fuente */
   color: #fff; /* Color del texto */

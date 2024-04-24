@@ -28,6 +28,7 @@ export const Project = () => {
 
   const handleViewProjectClick = () => {
     // Lógica para manejar el clic en "Ver proyecto"
+     window.location.href = "https://torco34.github.io/peaku-templete-first/";
   };
 
   return (

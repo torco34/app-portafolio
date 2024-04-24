@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavStyled, PortfolioText } from "./styled/Header";
 import { Search } from "./Search";
 import { useThemeContext } from "../../usecontext/ ContextProvider";
+
 import { BsGlobe2 } from "react-icons/bs";
 import { CustomButton } from "../common/CustomButton";
 import { ModalBox } from "../common/ModalBox";
