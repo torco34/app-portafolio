@@ -1,0 +1,7 @@
+.fondo-pagina {
+  /* background-image: url("../../assets/img/fon.jpg"); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-family: "Roboto", Arial, sans-serif;
+}

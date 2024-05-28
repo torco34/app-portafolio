@@ -4,6 +4,7 @@ import { BsCodeSlash } from "react-icons/bs";
 import { ModalBox } from "../common/ModalBox";
 import { useState } from "react";
 import { CustomButton } from "../common/CustomButton";
+import { NameProjects } from "../common/NameProjects";
 
 export const Project = () => {
   const { buttonTexts, projectNames, setProjectNames, setShowComponent } =
@@ -28,12 +29,13 @@ export const Project = () => {
 
   const handleViewProjectClick = () => {
     // Lógica para manejar el clic en "Ver proyecto"
-     window.location.href = "https://torco34.github.io/peaku-templete-first/";
+    window.location.href = "https://torco34.github.io/peaku-templete-first/";
   };
 
   return (
     <div className="mx-auto max-w-6xl ">
       <>
+        <NameProjects />
         {buttonTexts.map((buttonText, index) => (
           <CustomButton
             key={index}
@@ -46,6 +48,7 @@ export const Project = () => {
             onMouseOut={() => console.log("Mouse fuera del botón")}
           />
         ))}
+
         <ModalBox
           show={showModal}
           onClose={handleCloseModal}

@@ -1,11 +1,12 @@
-import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg";
-import { DecoraCompone } from "../component/home/DecoraCompone";
+import "./css/home.css";
 export const HomePages = () => {
   return (
     <>
-      <ContainerImgFondo>
-        <DecoraCompone />
-      </ContainerImgFondo>
+      <div className="bg-[#dccfb9] fondo-pagina flex items-center justify-center h-screen">
+        <div>
+          <h2>Soy desarradora web con cononocimiento en react</h2>
+        </div>
+      </div>
     </>
   );
 };
