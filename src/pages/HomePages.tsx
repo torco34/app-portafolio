@@ -1,15 +1,11 @@
-import { ServiceCard } from "../components/home/ServiceCard";
+import { InformationHome } from "../components/home/InformationHome";
 import "./css/home.css";
 export const HomePages = () => {
   return (
     <>
-      <div className="bg-[#fff]  fondo-pagina  h-screen">
-        <div>
-          <ServiceCard
-            name="Torcoroma Arias Desarrolladora web Front-End "
-            profession="Desarrolladora web Front-End"
-            description="Apasionada por la tecnología y el desarrollo web, con experiencia en React y Tailwind CSS."
-          />
+      <div className=" lex items-cente justify-cente h-scree  h-screen">
+        <div className="mx-auto informacionPersonal grid max-w-6xl grid-cols-1 ">
+          <InformationHome />
         </div>
       </div>
     </>

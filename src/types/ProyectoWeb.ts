@@ -4,4 +4,9 @@ export interface ProyectoWebProps {
     imagen: string;
     tecnologias: string[];
     enlace: string;
+    icons?: string[];
+   
   }
+
+
+ 

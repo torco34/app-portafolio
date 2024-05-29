@@ -3,7 +3,14 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  position: relative;
+  top: 20px;
 
+  font-family: "Roboto", Arial, sans-serif;
+}
+.informacionPersonal {
+  position: relative;
+  top: 100px;
   font-family: "Roboto", Arial, sans-serif;
 }
 /* .fondo-pagina::before {
