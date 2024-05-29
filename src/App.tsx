@@ -1,6 +1,6 @@
 // import DynamicForm from "./component/DynamicForm"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Layout } from "./components/header/header/Layout";
+import { Layout } from "./components/sidebar/header/Layout";
 import { HomePages } from "./pages/HomePages";
 import { PageProject } from "./pages/PageProject";
 import { StudyPages } from "./pages/StudyPages";

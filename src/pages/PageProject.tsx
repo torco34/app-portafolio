@@ -1,5 +1,3 @@
-import { ContainerImgFondo } from "../assets/styled/styleUniverse/FondoImg";
-
 export const PageProject = () => {
   return (
     <div className="flex items-center justify-center h-screen">

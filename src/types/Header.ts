@@ -7,4 +7,5 @@ export interface Link {
     imageSrc: string;
     name: string;
     profession: string;
+    profesionName: string;
   }

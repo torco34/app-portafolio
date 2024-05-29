@@ -9,5 +9,10 @@ export const links: Link[] = [
 ];
 
 export const PerfilHeaderProp: PerfilHeaderProps[] = [
-  { imageSrc: "url_1", name: "Name 1", profession: "Profession 1" },
+  {
+    imageSrc: "url_1",
+    name: "Name 1",
+    profession: "Profession 1",
+    profesionName: "",
+  },
 ];

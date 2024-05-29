@@ -3,7 +3,7 @@ import img1 from "../../assets/img/img1.jpg";
 import { BsCodeSlash } from "react-icons/bs";
 import { ModalBox } from "../common/ModalBox";
 import { useState } from "react";
-import { CustomButton } from "../common/CustomButton";
+import { CustomButton } from "../../components/common/CustomButton";
 import { NameProjects } from "../common/NameProjects";
 
 export const Project = () => {
